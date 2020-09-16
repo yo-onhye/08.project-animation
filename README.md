@@ -22,6 +22,21 @@ Animation Page clone하기
 
 - 강의 1. CSS 레이아웃 수강
 
+**09.16**
+
+- 강의 2. JS part1 수강
+- 요소에 data-index 세팅하기
+
+    ```jsx
+    // setAttribute를 사용하여 data-xxx 세팅이 가능하지만,
+    stepElems[i].setAttribute('data-index', i);
+
+    // 기본 속성인 dataset을 사용할 수 있다.
+    stepElems[i].dataset.index = i;
+    ```
+
+- intersection observer를 이용하여 눈에 보이는 요소만 제어할 수 있다. [[참고](https://heropy.blog/2019/10/27/intersection-observer/)]
+
 ## Tech Stack.
 
 HTML, ES6, Css
