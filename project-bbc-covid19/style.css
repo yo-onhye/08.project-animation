@@ -28,14 +28,12 @@ img {
 }
 /* 이미지들의 컨테이너 요소 */
 .scroll-graphic {
+	overflow: hidden;
 	position: sticky;
 	top: 0;
 	height: 100vh;
 }
 /* 이미지 아이템 */
-.scroll-graphic {
-	overflow: hidden;
-}
 .graphic-item {
 	display: flex;
 	align-items: center;
@@ -47,6 +45,7 @@ img {
 	height: 100%;
 	opacity: 0;
 	transition: 0.5s;
+	will-change: opacity;
 }
 .visible {
 	opacity: 1;
@@ -65,4 +64,25 @@ img {
 	border-radius: 10px;
 	background: rgba(255, 255, 255, 0.8);
 	box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+.bird {
+	position: absolute;
+	left: 0;
+	bottom: 70%;
+	width: 100px;
+	transform: translateX(-100%);
+	transition: 1.5s 0.5s linear;
+}
+[data-index="5"] .bird {
+	left: 30%;
+	bottom: 30%;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+
+/* footer */
+.global-footer {
+	padding: 2rem 0;
+	text-align: center;
 }

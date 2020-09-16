@@ -1,5 +1,22 @@
 // 전역변수 사용을 회피하기 위해 즉시 실행 익명함수 생성
 (() => {
+	const actions = {
+		birdFlies(key) {
+			if (key) {
+				document.querySelector('[data-index="2"] .bird').style.transform = `translateX(${window.innerWidth}px)`;
+			} else {
+				document.querySelector('[data-index="2"] .bird').style.transform = `translateX(-100px)`;
+			}
+		},
+		birdFlies2(key) {
+			if (key) {
+				document.querySelector('[data-index="5"] .bird').style.transform = `translateX(${window.innerWidth}px) translateY(${-window.innerHeight * 0.7}px)`;
+			} else {
+				document.querySelector('[data-index="5"] .bird').style.transform = `translateX(-100px)`;
+			}
+		},
+	};
+
 	const stepElems = document.querySelectorAll(".step");
 	const graphicElems = document.querySelectorAll(".graphic-item");
 	let currentItem = graphicElems[0]; // 현재 활성화된(visible 클래스가 붙은) .graphic-item을 지정
@@ -15,12 +32,18 @@
 		graphicElems[i].dataset.index = i;
 	}
 
-	function activate() {
+	function activate(action) {
 		currentItem.classList.add("visible");
+		if (action) {
+			actions[action](true);
+		}
 	}
 
-	function inactivate() {
+	function inactivate(action) {
 		currentItem.classList.remove("visible");
+		if (action) {
+			actions[action](false);
+		}
 	}
 
 	// scroll event
@@ -37,9 +60,13 @@
 			if (boundingRect.top > window.innerHeight * 0.1 && boundingRect.top < window.innerHeight * 0.8) {
 				inactivate();
 				currentItem = graphicElems[step.dataset.index];
-				activate();
+				activate(currentItem.dataset.action);
 			}
 		}
+	});
+
+	window.addEventListener("load", () => {
+		setTimeout(() => scrollTo(0, 0), 100);
 	});
 
 	activate();

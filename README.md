@@ -43,6 +43,12 @@ https://yo-onhye.github.io/08.project-animation/project-bbc-covid19/index.html
 
 - intersection observer를 이용하여 눈에 보이는 요소만 제어할 수 있다. [[참고](https://heropy.blog/2019/10/27/intersection-observer/)]
 
+**09.17**
+
+- 강의 3. JS part2 수강
+- true, false 값을 받아 스크롤 시 애니메이션을 초기화
+- actions() 함수를 추가하고 함수 안에서 쿼리 셀렉터로 요소를 체크하여 함수를 실행
+
 ## Tech Stack.
 
 HTML, ES6, Css
