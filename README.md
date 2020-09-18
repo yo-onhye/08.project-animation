@@ -6,7 +6,7 @@ Animation Page clone하기
 
 ### BBC 인터랙티브 페이지 "코로나19가 바꿀 사무실의 미래" 클론
 
-#### 페이지 리스트
+#### Page List.
 
 **기존 페이지**
 https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5
@@ -49,8 +49,25 @@ https://yo-onhye.github.io/08.project-animation/project-bbc-covid19/index.html
 - true, false 값을 받아 스크롤 시 애니메이션을 초기화
 - actions() 함수를 추가하고 함수 안에서 쿼리 셀렉터로 요소를 체크하여 함수를 실행
 
+### 네이버 채용 페이지 클론
+
+#### Page List.
+
+**기존 페이지**
+https://campaign.naver.com/recruit2020/checkpoint/
+
+**Git**
+https://yo-onhye.github.io/08.project-animation/project-bbc-covid19/index.html
+
+#### Process.
+
+**09.18**
+
+- 프로젝트 생성
+- header section 추가
+- 기존 이미지로 되어있던 꾸밈 요소를 가상선택자를 이용해 추가
+- 꾸밈 요소에 애니메이션 추가
+
 ## Tech Stack.
 
-HTML, ES6, Css
-
-## Link.
+HTML, ES6, CSS
