@@ -12,7 +12,7 @@ Animation Page clone하기
 https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5
 
 **인프런 강의**  
-https://www.inflearn.com/course/bbc-%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C%EC%9B%B9-%ED%81%B4%EB%A1%A0#
+bit.ly/2Ej7f4q
 
 **Git**  
 https://yo-onhye.github.io/08.project-animation/project-bbc-covid19/index.html
@@ -69,6 +69,12 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - header section 추가
 - 기존 이미지로 되어있던 꾸밈 요소를 가상선택자를 이용해 추가
 - 꾸밈 요소에 애니메이션 추가
+
+**09.19**
+
+- section1 & section2 추가
+- 공통으로 사용할 수 있는 animation 추가
+- 기존 페이지는 scroll 시 effect 클래스를 section wrapper에 추가하여 애니메이션 추가. 동일한 방법으로 구현할지, 기존 하던대로 스크립트로 각 요소에 애니메이션을 추가할 지 고민하기
 
 ## Tech Stack.
 
