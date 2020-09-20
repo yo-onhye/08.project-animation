@@ -53,6 +53,8 @@ https://yo-onhye.github.io/08.project-animation/project-bbc-covid19/index.html
 
 ### 네이버 채용 페이지 클론
 
+네이버 채용 페이지 참고하여 코로나 정보 페이지 만들기
+
 #### Page List.
 
 **기존 페이지**  
@@ -75,6 +77,12 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - section1 & section2 추가
 - 공통으로 사용할 수 있는 animation 추가
 - 기존 페이지는 scroll 시 effect 클래스를 section wrapper에 추가하여 애니메이션 추가. 동일한 방법으로 구현할지, 기존 하던대로 스크립트로 각 요소에 애니메이션을 추가할 지 고민하기
+
+**09.20**
+
+- section3 tab ui 추가
+- 페이지 구성 변경 → 코로나 19 정보 페이지로 기획 변경
+- 자바 스크립트 오류 발생 → `Uncaught TypeError: Cannot read property 'classList' of undefined`
 
 ## Tech Stack.
 
