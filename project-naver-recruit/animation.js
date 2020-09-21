@@ -1,8 +1,8 @@
 window.onload = () => {
-	const elTabList = document.querySelectorAll("._tab_bx li");
+	const elTabItem = document.querySelectorAll("._tab_list > li");
 	const elTabBtn = document.querySelectorAll("._tab_btn");
 	const elTabPannel = document.querySelectorAll("._tab_pannel");
-	const elToggleList = document.querySelectorAll("._toggle_list > li");
+	const elToggleItem = document.querySelectorAll("._toggle_list > li");
 	const elToggleBtn = document.querySelectorAll("._toggle_btn");
 	const sActiveClass = "active";
 	let nActiveTab = 0;
@@ -19,17 +19,17 @@ window.onload = () => {
 
 	for (let i in elToggleBtn) {
 		elToggleBtn[i].onclick = () => {
-			elToggleList[Number(i)].classList.toggle(sActiveClass);
+			elToggleItem[Number(i)].classList.toggle(sActiveClass);
 		};
 	}
 
 	function controlTab() {
-		for (let i = 0; i < elTabList.length; i++) {
+		for (let i = 0; i < elTabItem.length; i++) {
 			if (i === nActiveTab) {
-				elTabList[i].classList.add(sActiveClass);
+				elTabItem[i].classList.add(sActiveClass);
 				elTabPannel[i].classList.add(sActiveClass);
 			} else {
-				elTabList[i].classList.remove(sActiveClass);
+				elTabItem[i].classList.remove(sActiveClass);
 				elTabPannel[i].classList.remove(sActiveClass);
 			}
 		}

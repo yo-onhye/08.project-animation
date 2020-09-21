@@ -89,6 +89,12 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - section4 toggle ui 추가
 - 공통 UI 스타일 변경
 
+💡 자바 스크립트 오류 수정
+
+`Uncaught TypeError: Cannot read property 'classList' of undefined`
+
+→ 이벤트를 받는 객체가 명확하지 않아서 그런것 같다. tab안에 tab 버튼을 감싼 li말고 pannel에 있는 li까지 잡혀서 이런 오류가 난 것 같다. '>' 를 사용해 tab 버튼을 감싼 li를 잡으니 해결되었다.
+
 ## Tech Stack.
 
 HTML, ES6, CSS
