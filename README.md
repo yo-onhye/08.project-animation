@@ -84,6 +84,11 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - 페이지 구성 변경 → 코로나 19 정보 페이지로 기획 변경
 - 자바 스크립트 오류 발생 → `Uncaught TypeError: Cannot read property 'classList' of undefined`
 
+**09.21**
+
+- section4 toggle ui 추가
+- 공통 UI 스타일 변경
+
 ## Tech Stack.
 
 HTML, ES6, CSS
