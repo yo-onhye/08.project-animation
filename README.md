@@ -101,6 +101,12 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - youtube 영상 추가
 - 질병관리청 정례브리핑 영상 youtube API로 불러와 최신 10개씩 호출
 
+**09.23**
+
+- 스크롤 이벤트 추가 → 스크롤 시 section top값보다 300px 높은 포지션일때 `effect`클래스 추가
+- `effect` 클래스 추가 시 애니메이션이 실행되도록 style 변경
+- 페이지 중간에서 새로고침 시 상단으로 로드되도록 하여 애니메이션 꼬임 방어
+
 ## Tech Stack.
 
 HTML, ES6, CSS

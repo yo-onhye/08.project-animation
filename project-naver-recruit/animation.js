@@ -1,14 +1,75 @@
 window.onload = () => {
+	const elSections = document.querySelectorAll("section");
 	const elTabItem = document.querySelectorAll("._tab_list > li");
 	const elTabBtn = document.querySelectorAll("._tab_btn");
 	const elTabPannel = document.querySelectorAll("._tab_pannel");
 	const elToggleItem = document.querySelectorAll("._toggle_list > li");
 	const elToggleBtn = document.querySelectorAll("._toggle_btn");
 	const elYoutubeList = document.querySelector(".youtube_list");
+	const sEffectClass = "effect";
 	const sActiveClass = "active";
+	const nSeclength = elSections.length;
 	let isLoading = false;
 	let aResultData = [];
 	let nActiveTab = 0;
+	let aOffset;
+	let nGap = -300;
+	let nScroll = 0;
+
+	// 페이지 중간에서 새로고침 시 상단으로 로드
+	setTimeout(() => scrollTo(0, 0), 100);
+
+	setPos = () => {
+		aOffset = [];
+		elSections.forEach((item, index) => {
+			aOffset.push(item.offsetTop);
+		});
+		aOffset.push(elSections[nSeclength - 1].offsetTop + elSections[nSeclength - 1].offsetHeight);
+	};
+
+	setPos();
+
+	window.onresize = () => {
+		setPos();
+	};
+
+	window.onscroll = () => {
+		nScroll = window.scrollY;
+		activation(nScroll);
+	};
+
+	window.addEventListener("load", () => {
+		setTimeout(() => scrollTo(0, 0), 100);
+	});
+
+	activation = (scroll) => {
+		elSections.forEach((item, index) => {
+			// elSections[index].classList.remove(sActiveClass);
+			if (scroll >= aOffset[index] + nGap && scroll < aOffset[index + 1] + nGap) {
+				elSections[index].classList.add(sEffectClass);
+			}
+		});
+	};
+
+	scrollUp = (target_pos) => {
+		if (nScroll < target_pos) {
+			nScroll = target_pos;
+			clearInterval(timer);
+		} else {
+			nScroll -= 10;
+		}
+		window.scroll(0, nScroll);
+	};
+
+	scrollDown = (target_pos) => {
+		if (nScroll > target_pos) {
+			nScroll = target_pos;
+			clearInterval(timer);
+		} else {
+			nScroll += 10;
+		}
+		window.scroll(0, nScroll);
+	};
 
 	getYoutubeVideo = async () => {
 		try {

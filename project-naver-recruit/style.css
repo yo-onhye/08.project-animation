@@ -132,10 +132,14 @@ img {
 	animation: 0.8s blink ease infinite;
 	content: "";
 }
+.text_bx {
+	opacity: 0;
+}
 .info_bx {
 	position: relative;
 	margin-top: 30px;
 	border-top: 1px solid #000;
+	opacity: 0;
 }
 .info_list {
 	margin-top: 30px;
@@ -160,6 +164,9 @@ img {
 }
 
 /* tab */
+.tab_bx {
+	opacity: 0;
+}
 .tab_list {
 	overflow: hidden;
 	width: 100%;
@@ -213,6 +220,9 @@ img {
 }
 
 /* toggle */
+.toggle_bx {
+	opacity: 0;
+}
 .toggle_list {
 	margin-top: 30px;
 	border-bottom: 1px solid #959594;
@@ -319,6 +329,7 @@ img {
 	margin-top: 30px;
 	padding-bottom: 56%;
 	background-color: #000;
+	opacity: 0;
 }
 .video_bx iframe {
 	position: absolute;
@@ -330,6 +341,7 @@ img {
 .youtube_bx {
 	margin-top: 30px;
 	font-size: 0;
+	opacity: 0;
 }
 .youtube_list li {
 	position: relative;
@@ -447,7 +459,8 @@ img {
 }
 
 /* section */
-.section1 .text_bx {
+.section1.effect .text_bx {
+	opacity: 1;
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
 }
@@ -457,7 +470,7 @@ img {
 .section2:before {
 	background-color: #fff;
 }
-.section2 .section_title {
+.section2.effect .section_title {
 	color: #fff;
 	-webkit-animation: 0.8s fadeToRight ease-out forwards;
 	animation: 0.8s fadeToRight ease-out forwards;
@@ -465,14 +478,12 @@ img {
 .section2 .section_title span:after {
 	background-color: #fff;
 }
-.section2 .info_bx {
+.section2.effect .info_bx {
 	border-color: #fff;
-}
-.section2 .info_list {
-	opacity: 0;
 	color: #fff;
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
+	animation-delay: 0.8s;
 }
 .section2 .info_list li:before {
 	background-color: #fff;
@@ -483,20 +494,19 @@ img {
 .section3:before {
 	background-color: #4f5a5e;
 }
-.section3 .section_title {
+.section3.effect .section_title {
 	-webkit-animation: 0.8s fadeToRight ease-out forwards;
 	animation: 0.8s fadeToRight ease-out forwards;
 }
-.section3 .info_bx {
-	opacity: 0;
+.section3.effect .info_bx {
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
+	animation-delay: 0.8s;
 }
-.section3 .tab_bx {
-	opacity: 0;
+.section3.effect .tab_bx {
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
-	animation-delay: 0.5s;
+	animation-delay: 1.6s;
 }
 .section4 {
 	background-color: #e8e7e2;
@@ -504,15 +514,14 @@ img {
 .section4:before {
 	background-color: #e7eaf1;
 }
-.section4 .section_title {
+.section4.effect .section_title {
 	-webkit-animation: 0.8s fadeToRight ease-out forwards;
 	animation: 0.8s fadeToRight ease-out forwards;
 }
-.section4 .toggle_bx {
-	opacity: 0;
+.section4.effect .toggle_bx {
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
-	animation-delay: 0.5s;
+	animation-delay: 0.8s;
 }
 .section5 {
 	background-color: #4f5a5e;
@@ -520,7 +529,7 @@ img {
 .section5:before {
 	background-color: #e8e7e2;
 }
-.section5 .section_title {
+.section5.effect .section_title {
 	color: #fff;
 	-webkit-animation: 0.8s fadeToRight ease-out forwards;
 	animation: 0.8s fadeToRight ease-out forwards;
@@ -528,17 +537,17 @@ img {
 .section5 .section_title span:after {
 	background-color: #fff;
 }
-.section5 .info_bx {
-	opacity: 0;
+.section5.effect .info_bx {
 	border-color: #fff;
 	color: #fff;
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
+	animation-delay: 0.8s;
 }
-.section5 .video_bx {
-	opacity: 0;
+.section5.effect .video_bx {
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
+	animation-delay: 1.6s;
 }
 .section6 {
 	background-color: #e8e7e2;
@@ -546,14 +555,14 @@ img {
 .section6:before {
 	background-color: #e8e7e2;
 }
-.section6 .section_title {
+.section6.effect .section_title {
 	-webkit-animation: 0.8s fadeToRight ease-out forwards;
 	animation: 0.8s fadeToRight ease-out forwards;
 }
-.section6 .youtube_bx {
-	opacity: 0;
+.section6.effect .youtube_bx {
 	-webkit-animation: 0.8s fadeToTop ease-out forwards;
 	animation: 0.8s fadeToTop ease-out forwards;
+	animation-delay: 0.8s;
 }
 
 @media (max-width: 1279px) {
