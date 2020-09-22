@@ -93,7 +93,13 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 
 `Uncaught TypeError: Cannot read property 'classList' of undefined`
 
-→ 이벤트를 받는 객체가 명확하지 않아서 그런것 같다. tab안에 tab 버튼을 감싼 li말고 pannel에 있는 li까지 잡혀서 이런 오류가 난 것 같다. '>' 를 사용해 tab 버튼을 감싼 li를 잡으니 해결되었다.
+→ 이벤트를 받는 객체가 명확하지 않아서 그런것 같다. tab안에 tab 버튼을 감싼 li말고 pannel에 있는 li까지 잡혀서 이런 오류가 난 것 같다. `>` 를 사용해 tab 버튼을 감싼 li를 잡으니 해결되었다.
+
+**09.22**
+
+- section5, section6 추가
+- youtube 영상 추가
+- 질병관리청 정례브리핑 영상 youtube API로 불러와 최신 10개씩 호출
 
 ## Tech Stack.
 
