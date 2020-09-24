@@ -1,0 +1,90 @@
+@charset "utf-8";
+@font-face {
+	font-family: "Hurme";
+	src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/HurmeGeometricSans2-Bold.woff2") format("woff2"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/HurmeGeometricSans2-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body,
+dd,
+dl,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+ul,
+button {
+	margin: 0;
+	padding: 0;
+}
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 40px;
+	box-sizing: border-box;
+	background: #07101d;
+	background-size: cover !important;
+	font-family: "Hurme";
+	font-weight: 500;
+	user-select: none;
+	letter-spacing: -1px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+ol,
+ul,
+li {
+	list-style: none;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:active,
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+input,
+button {
+	border: 0;
+	background-color: transparent;
+}
+input:focus,
+button:focus {
+	outline: none;
+}
+button {
+	background-color: transparent;
+	cursor: pointer;
+}
+p {
+	word-break: normal;
+}
+img {
+	vertical-align: top;
+}
+.blind {
+	overflow: hidden;
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
