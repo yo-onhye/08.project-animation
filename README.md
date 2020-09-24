@@ -107,6 +107,27 @@ https://yo-onhye.github.io/08.project-animation/project-naver-recruit/index.html
 - `effect` 클래스 추가 시 애니메이션이 실행되도록 style 변경
 - 페이지 중간에서 새로고침 시 상단으로 로드되도록 하여 애니메이션 꼬임 방어
 
+---
+
+### Portfolio Grid Snippet 클론
+
+#### Page List.
+
+**참고 페이지**  
+https://codepen.io/jcoulterdesign/pen/arQoER
+
+**Git**  
+https://yo-onhye.github.io/08.project-animation/project-interactive-single/index.html
+
+#### Process.
+
+**09.24**
+
+- 프로젝트 생성
+- intro section 추가
+- 기존 UI 중 이미지를 css로 대체할 수 있는 부분은 css로 대체
+- 페이지 이동 버튼(arrow)에 애니메이션 추가
+
 ## Tech Stack.
 
 HTML, ES6, CSS
