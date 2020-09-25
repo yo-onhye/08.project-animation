@@ -128,6 +128,13 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - 기존 UI 중 이미지를 css로 대체할 수 있는 부분은 css로 대체
 - 페이지 이동 버튼(arrow)에 애니메이션 추가
 
+**09.25**
+
+- main section 추가
+- 페이지 구조 변경
+- 부자연스러웠던 `.intro_tit_bx` animation 수정 → 기존 animation을 활용해도 부자연스러웠는데, opacity:0을 초기 값으로 주고, 애니메이션 시작 시 opacity:1을 주니 자연스러워짐
+- 버튼 클릭 시 메인 페이지 전환 애니메이션 추가
+
 ## Tech Stack.
 
 HTML, ES6, CSS
