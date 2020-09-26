@@ -135,6 +135,12 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - 부자연스러웠던 `.intro_tit_bx` animation 수정 → 기존 animation을 활용해도 부자연스러웠는데, opacity:0을 초기 값으로 주고, 애니메이션 시작 시 opacity:1을 주니 자연스러워짐
 - 버튼 클릭 시 메인 페이지 전환 애니메이션 추가
 
+**09.26**
+
+- portfolio_item 추가
+- img_btn 클릭 시 노출 될 요소들 포함하여 구조 생성
+- 슬라이드 추가 전 img_btn 기능 먼저 구현 위해 item 요소 선작업
+
 ## Tech Stack.
 
 HTML, ES6, CSS

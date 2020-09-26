@@ -163,7 +163,13 @@ img {
 .header .home_btn.ty_main .ico_hamburger:after {
 	background-color: #07101d;
 }
-
+.header.ty_white .logo_tx {
+	color: #fff;
+}
+.header.ty_white .logo_bx {
+	background-color: #ffdc25;
+	color: #07101d;
+}
 /* intro */
 .intro_bg {
 	position: fixed;
@@ -268,6 +274,134 @@ img {
 	transition: opacity 0.6s 0.2s, -webkit-clip-path 1s 0.6s cubic-bezier(0.79, -0.01, 0, 0.99);
 	transition: opacity 0.6s 0.2s, clip-path 1s 0.6s cubic-bezier(0.79, -0.01, 0, 0.99);
 	transition: opacity 0.6s 0.2s, clip-path 1s 0.6s cubic-bezier(0.79, -0.01, 0, 0.99), -webkit-clip-path 1s 0.6s cubic-bezier(0.79, -0.01, 0, 0.99);
+}
+.portfolio_cont {
+	height: 100%;
+	padding-top: 130px;
+}
+.portfolio_cont .back_btn {
+	position: absolute;
+	bottom: 73px;
+	left: 40px;
+	width: 19px;
+	height: 21px;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowDown.png) 50% 50%;
+	background-size: cover;
+	opacity: 0;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	content: "";
+}
+.portfolio_item {
+	position: relative;
+}
+.portfolio_item .item_tit {
+	position: relative;
+	font-weight: bold;
+	color: #060608;
+	font-size: 22px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.portfolio_item .item_image {
+	position: relative;
+	height: 380px;
+	margin-top: 10px;
+	padding: 94px 94px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.portfolio_item .item_image .img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.portfolio_item .item_image .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(11, 18, 27, 0.7);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: opacity 0.1s, -webkit-transform 0.8s 0.7s cubic-bezier(0.79, -0.01, 0, 0.99);
+	transition: opacity 0.1s, -webkit-transform 0.8s 0.7s cubic-bezier(0.79, -0.01, 0, 0.99);
+	transition: opacity 0.1s, transform 0.8s 0.7s cubic-bezier(0.79, -0.01, 0, 0.99);
+	transition: opacity 0.1s, transform 0.8s 0.7s cubic-bezier(0.79, -0.01, 0, 0.99), -webkit-transform 0.8s 0.7s cubic-bezier(0.79, -0.01, 0, 0.99);
+	opacity: 1;
+	transition: all 0.2s ease 0s;
+}
+.portfolio_item .img_txt {
+	left: 0;
+	color: #ffdc25;
+	font-weight: 700;
+	font-size: 12px;
+	opacity: 0;
+	-webkit-transition: all 0.8s 0.16s cubic-bezier(0.79, -0.01, 0, 0.99);
+	transition: all 0.8s 0.16s cubic-bezier(0.79, -0.01, 0, 0.99);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	opacity: 1;
+	transition: all 0.2s ease 0s;
+}
+.portfolio_item .img_tit {
+	position: relative;
+	width: 350px;
+	margin: 22px 0 16px 0;
+	color: #fff;
+	font-weight: 800;
+	font-size: 28px;
+	line-height: 35px;
+	opacity: 0;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.6s 0.2s;
+	transition: all 0.6s 0.2s;
+	opacity: 1;
+	transition: all 0.2s ease 0s;
+}
+.portfolio_item .img_btn {
+	position: relative;
+	display: inline-block;
+	margin-top: 14px;
+	padding: 12px 40px 14px 20px;
+	background: #ffdc25;
+	color: #07101d;
+	font-size: 14px;
+	vertical-align: top;
+	opacity: 0;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: all 0.6s 0.3s;
+	transition: all 0.6s 0.3s;
+	opacity: 1;
+	transition: all 0.2s ease 0s;
+	cursor: pointer;
+}
+.portfolio_item .img_btn:before {
+	position: absolute;
+	top: 16px;
+	left: auto;
+	right: 17px;
+	width: 14px;
+	height: 13px;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowbblakc.png) 50% 50%;
+	background-size: cover;
+	content: "";
+}
+.portfolio_item .ico_scroll {
+	display: inline-block;
+	width: 19px;
+	height: 21px;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowDown.png) 50% 50%;
+	background-size: cover;
+	opacity: 0;
+	-webkit-transition: all 0.8s 0s;
+	transition: all 0.8s 0s;
 }
 
 /* animation */
