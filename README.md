@@ -141,6 +141,11 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - img_btn 클릭 시 노출 될 요소들 포함하여 구조 생성
 - 슬라이드 추가 전 img_btn 기능 먼저 구현 위해 item 요소 선작업
 
+**09.27**
+
+- item 더보기 버튼 클릭 애니메이션 추가
+- 클릭 시 `.img_txt` 애니메이션이 부자연스러움 → 확인 필요
+
 ## Tech Stack.
 
 HTML, ES6, CSS
