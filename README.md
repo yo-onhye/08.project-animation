@@ -146,6 +146,11 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - item 더보기 버튼 클릭 애니메이션 추가
 - 클릭 시 `.img_txt` 애니메이션이 부자연스러움 → 확인 필요
 
+**09.28**
+
+- intro → main 페이지 전환 인터렉션 변경
+- intro 페이지는 height: 100vh로 막고, main은 item 리스트는 나열하기위해 height을 풀어줌
+
 ## Tech Stack.
 
 HTML, ES6, CSS
