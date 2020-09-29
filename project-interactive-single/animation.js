@@ -2,12 +2,12 @@ window.onload = () => {
 	const elHeaderSec = document.querySelector(".header");
 	const elIntroSec = document.querySelector(".portfolio_intro");
 	const elMainSec = document.querySelector(".portfolio_main");
-	const elItemSec = document.querySelectorAll(".portfolio_item");
+	const elItemSec = elMainSec.querySelectorAll(".portfolio_item");
 	const elHomeBtn = document.querySelector(".home_btn");
 	const elIntroBtn = document.querySelector(".intro_btn");
-	const elImgBtn = document.querySelector(".img_btn");
-	const elBackBtn = document.querySelector(".back_btn");
-	let elTarget = "";
+	const elImgBtn = elMainSec.querySelectorAll(".img_btn");
+	const elBackBtn = elMainSec.querySelector(".back_btn");
+	let nActiveIndex = "";
 	let nScroll = 0;
 	let isMainShow = false;
 
@@ -25,20 +25,38 @@ window.onload = () => {
 		isMainShow = true;
 	}, 2500);
 
-	elImgBtn.addEventListener("click", (e) => {
-		elTarget = e.target.closest(".portfolio_item");
+	for (let i in elImgBtn) {
+		elImgBtn[i].onclick = () => {
+			nActiveIndex = Number(i);
+			intoDetail(i);
+		};
+	}
+
+	intoDetail = (i) => {
 		elHeaderSec.classList.add("ty_white");
-		elTarget.classList.add("expand");
+		elItemSec[nActiveIndex].classList.add("expand");
 		elHomeBtn.classList.remove("ty_main");
 		elBackBtn.style.display = "block";
 		elBackBtn.classList.add("fadeInAnimation");
-	});
+		for (let j = 0; j < elItemSec.length; j++) {
+			if (j !== nActiveIndex) {
+				elItemSec[j].style.height = 0;
+				elItemSec[j].style.transform = "scale(0)";
+				elItemSec[j].style.transition = "all 0.4s 0s";
+			}
+		}
+	};
 
 	elBackBtn.addEventListener("click", () => {
 		elHeaderSec.classList.remove("ty_white");
-		elTarget.classList.remove("expand");
+		elItemSec[nActiveIndex].classList.remove("expand");
 		elHomeBtn.classList.add("ty_main");
 		elBackBtn.style.display = "none";
+		for (let j = 0; j < elItemSec.length; j++) {
+			elItemSec[j].style.height = "auto";
+			elItemSec[j].style.transform = "scale(1)";
+			elItemSec[j].style.transition = "all 0.4s 0s";
+		}
 	});
 
 	enterMain = () => {
@@ -57,13 +75,6 @@ window.onload = () => {
 			i.style.transition = "all 0.5s ease 1.5s";
 		}
 	};
-
-	elBackBtn.addEventListener("click", () => {
-		elHeaderSec.classList.remove("ty_white");
-		elTarget.classList.remove("expand");
-		elHomeBtn.classList.add("ty_main");
-		elBackBtn.style.display = "none";
-	});
 
 	window.onscroll = () => {};
 };

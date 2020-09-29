@@ -151,6 +151,11 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - intro → main 페이지 전환 인터렉션 변경
 - intro 페이지는 height: 100vh로 막고, main은 item 리스트는 나열하기위해 height을 풀어줌
 
+**09.29**
+
+- `.portfolio_item`이 여러개일 경우 아이템 별 더보기 클릭 버튼 애니메이션 추가
+- item 클릭 이벤트 발생 시 다른 item들을 숨김 처리
+
 ## Tech Stack.
 
 HTML, ES6, CSS
