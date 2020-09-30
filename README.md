@@ -156,6 +156,12 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - `.portfolio_item`이 여러개일 경우 아이템 별 더보기 클릭 버튼 애니메이션 추가
 - item 클릭 이벤트 발생 시 다른 item들을 숨김 처리
 
+**09.30**
+
+- header 영역 스크롤 시 background color 처리 → background 없을 경우 텍스트끼리 겹쳐 보여 가독성이 떨어짐
+- 아이템 세부 페이지 반응형 대응
+- cusor 디자인 추가
+
 ## Tech Stack.
 
 HTML, ES6, CSS

@@ -32,8 +32,9 @@ window.onload = () => {
 		};
 	}
 
-	intoDetail = (i) => {
+	intoDetail = () => {
 		elHeaderSec.classList.add("ty_white");
+		elHeaderSec.style.background = "none";
 		elItemSec[nActiveIndex].classList.add("expand");
 		elHomeBtn.classList.remove("ty_main");
 		elBackBtn.style.display = "block";
@@ -48,6 +49,7 @@ window.onload = () => {
 	};
 
 	elBackBtn.addEventListener("click", () => {
+		elHeaderSec.style.background = "#ffdc25";
 		elHeaderSec.classList.remove("ty_white");
 		elItemSec[nActiveIndex].classList.remove("expand");
 		elHomeBtn.classList.add("ty_main");
@@ -60,6 +62,7 @@ window.onload = () => {
 	});
 
 	enterMain = () => {
+		elHeaderSec.style.background = "#ffdc25";
 		elMainSec.style.display = "block";
 		elMainSec.style.transform = "display 0.4s 1s";
 		elMainSec.style.opacity = 1;
