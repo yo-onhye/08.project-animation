@@ -127,6 +127,21 @@ img {
 	font-size: 26px;
 	vertical-align: top;
 }
+.header .nav {
+	display: inline-block;
+	margin-left: 50px;
+	padding: 0;
+	vertical-align: top;
+}
+.header .nav_link {
+	display: inline-block;
+	margin-right: 10px;
+	padding: 5px;
+	line-height: 30px;
+	opacity: 0;
+	-webkit-animation: fadeInAnimation 1s 2.5s forwards;
+	animation: fadeInAnimation 1s 2.5s forwards;
+}
 .header .home_btn {
 	position: absolute;
 	top: 45px;
@@ -299,7 +314,7 @@ img {
 	content: "";
 }
 .portfolio_cont .portfolio_note {
-	margin-top: 30px;
+	margin: 60px 0;
 	color: #07101d;
 	text-align: center;
 }

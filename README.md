@@ -162,6 +162,11 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - 아이템 세부 페이지 반응형 대응
 - cusor 디자인 추가
 
+**10.01**
+
+- Navigation 구조 추가 → item별 id 값 부여
+- section 영역 추가
+
 ## Tech Stack.
 
 HTML, ES6, CSS
