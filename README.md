@@ -167,6 +167,10 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - Navigation 구조 추가 → item별 id 값 부여
 - section 영역 추가
 
+**10.03**
+
+- Navigation 스크립트 추가 → item 더보기 버튼 클릭 시 액션이 이상하여 확인 예정
+
 ## Tech Stack.
 
 HTML, ES6, CSS

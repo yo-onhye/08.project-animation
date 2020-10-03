@@ -1,5 +1,7 @@
 window.onload = () => {
 	const elHeaderSec = document.querySelector(".header");
+	const elNavSec = document.querySelector(".nav");
+	const elNavLink = document.querySelectorAll(".nav_link");
 	const elIntroSec = document.querySelector(".portfolio_intro");
 	const elMainSec = document.querySelector(".portfolio_main");
 	const elItemSec = elMainSec.querySelectorAll(".portfolio_item");
@@ -7,9 +9,22 @@ window.onload = () => {
 	const elIntroBtn = document.querySelector(".intro_btn");
 	const elImgBtn = elMainSec.querySelectorAll(".img_btn");
 	const elBackBtn = elMainSec.querySelector(".back_btn");
+	const nLen = elItemSec.length;
+	let offs;
 	let nActiveIndex = "";
 	let nScroll = 0;
+	let base = -90;
 	let isMainShow = false;
+	let enableClick = true;
+	let isSetPos = false;
+
+	setPos = () => {
+		offs = [];
+		elItemSec.forEach((item, index) => {
+			offs.push(item.offsetTop);
+		});
+		offs.push(elItemSec[nLen - 1].offsetTop + elItemSec[nLen - 1].offsetHeight);
+	};
 
 	elHomeBtn.addEventListener("click", () => {
 		if (!elHeaderSec.classList.contains("ty_white")) {
@@ -24,6 +39,60 @@ window.onload = () => {
 	setTimeout(function () {
 		isMainShow = true;
 	}, 2500);
+
+	for (let i = 0; i < nLen; i++) {
+		if (isSetPos) {
+			elNavLink[i].onclick = () => {
+				if (enableClick) {
+					if (offs[i] > nScroll) {
+						timer = setInterval(() => {
+							scrollDown(offs[i]);
+						}, 5);
+					} else if (offs[i] < nScroll) {
+						timer = setInterval(() => {
+							scrollUp(offs[i]);
+						}, 5);
+					} else {
+						return;
+					}
+					enableClick = false;
+				}
+			};
+		}
+	}
+
+	activation = (nScroll) => {
+		elNavLink.forEach((item, index) => {
+			elNavLink[index].querySelector("a").style.fontSize = "inherit";
+			elNavLink[index].querySelector("a").style.borderBottom = "none";
+			if (nScroll >= offs[index] + base && nScroll < offs[index + 1] + base) {
+				elNavLink[index].querySelector("a").style.fontSize = "20px";
+				elNavLink[index].querySelector("a").style.borderBottom = "2px solid #07101d";
+			}
+		});
+	};
+
+	scrollUp = (target_pos) => {
+		if (nScroll < target_pos) {
+			nScroll = target_pos;
+			clearInterval(timer);
+			enableClick = true;
+		} else {
+			nScroll -= 10;
+		}
+		window.scroll(0, nScroll);
+	};
+
+	scrollDown = (target_pos) => {
+		if (nScroll > target_pos) {
+			nScroll = target_pos;
+			clearInterval(timer);
+			enableClick = true;
+		} else {
+			nScroll += 10;
+		}
+		window.scroll(0, nScroll);
+	};
 
 	for (let i in elImgBtn) {
 		elImgBtn[i].onclick = () => {
@@ -77,7 +146,19 @@ window.onload = () => {
 			i.style.transform = "rotateY(0deg) scale(1)";
 			i.style.transition = "all 0.5s ease 1.5s";
 		}
+		setTimeout(function () {
+			setPos();
+			isSetPos = true;
+			console.log(offs);
+		}, 2500);
 	};
 
-	window.onscroll = () => {};
+	window.onresize = () => {
+		setPos();
+	};
+
+	window.onscroll = () => {
+		scroll = window.scrollY;
+		activation(scroll);
+	};
 };
