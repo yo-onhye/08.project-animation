@@ -1,4 +1,5 @@
 window.onload = () => {
+	const elBody = document.body;
 	const elHeaderSec = document.querySelector(".header");
 	const elNavSec = document.querySelector(".nav");
 	const elNavLink = document.querySelectorAll(".nav_link");
@@ -13,7 +14,7 @@ window.onload = () => {
 	let offs;
 	let nActiveIndex = "";
 	let nScroll = 0;
-	let base = -90;
+	let base = -170;
 	let isMainShow = false;
 	let enableClick = true;
 	let isSetPos = false;
@@ -21,7 +22,7 @@ window.onload = () => {
 	setPos = () => {
 		offs = [];
 		elItemSec.forEach((item, index) => {
-			offs.push(item.offsetTop);
+			offs.push(item.offsetTop + base);
 		});
 		offs.push(elItemSec[nLen - 1].offsetTop + elItemSec[nLen - 1].offsetHeight);
 	};
@@ -62,14 +63,16 @@ window.onload = () => {
 	}
 
 	activation = (nScroll) => {
-		elNavLink.forEach((item, index) => {
-			elNavLink[index].querySelector("a").style.fontSize = "inherit";
-			elNavLink[index].querySelector("a").style.borderBottom = "none";
-			if (nScroll >= offs[index] + base && nScroll < offs[index + 1] + base) {
-				elNavLink[index].querySelector("a").style.fontSize = "20px";
-				elNavLink[index].querySelector("a").style.borderBottom = "2px solid #07101d";
-			}
-		});
+		if (isSetPos) {
+			elNavLink.forEach((item, index) => {
+				elNavLink[index].querySelector("a").style.fontSize = "inherit";
+				elNavLink[index].querySelector("a").style.borderBottom = "none";
+				if (nScroll >= offs[index] && nScroll < offs[index + 1]) {
+					elNavLink[index].querySelector("a").style.fontSize = "20px";
+					elNavLink[index].querySelector("a").style.borderBottom = "2px solid #07101d";
+				}
+			});
+		}
 	};
 
 	scrollUp = (target_pos) => {
@@ -102,9 +105,11 @@ window.onload = () => {
 	}
 
 	intoDetail = () => {
+		elBody.style.overflow = "hidden";
 		elHeaderSec.classList.add("ty_white");
 		elHeaderSec.style.background = "none";
 		elItemSec[nActiveIndex].classList.add("expand");
+		elNavSec.style.display = "none";
 		elHomeBtn.classList.remove("ty_main");
 		elBackBtn.style.display = "block";
 		elBackBtn.classList.add("fadeInAnimation");
@@ -118,9 +123,11 @@ window.onload = () => {
 	};
 
 	elBackBtn.addEventListener("click", () => {
+		elBody.style.overflow = "auto";
 		elHeaderSec.style.background = "#ffdc25";
 		elHeaderSec.classList.remove("ty_white");
 		elItemSec[nActiveIndex].classList.remove("expand");
+		elNavSec.style.display = "inline-block";
 		elHomeBtn.classList.add("ty_main");
 		elBackBtn.style.display = "none";
 		for (let j = 0; j < elItemSec.length; j++) {
@@ -149,7 +156,6 @@ window.onload = () => {
 		setTimeout(function () {
 			setPos();
 			isSetPos = true;
-			console.log(offs);
 		}, 2500);
 	};
 

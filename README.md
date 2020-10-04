@@ -171,6 +171,12 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 
 - Navigation 스크립트 추가 → item 더보기 버튼 클릭 시 액션이 이상하여 확인 예정
 
+**10.04**
+
+- Navigation activation 추가로 오류 발생 → setPos()실행 후 offs 배열이 채워졌을 때 isSetPos를 판단하여 activation 함수 실행하여 문제 해결
+- detail 페이지 진입 시 body에 `overflow:hidden;` 추가
+- detail 페이지 진입 시 nav 숨김
+
 ## Tech Stack.
 
 HTML, ES6, CSS
