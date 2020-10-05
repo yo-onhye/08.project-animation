@@ -177,6 +177,25 @@ https://yo-onhye.github.io/08.project-animation/project-interactive-single/index
 - detail 페이지 진입 시 body에 `overflow:hidden;` 추가
 - detail 페이지 진입 시 nav 숨김
 
+---
+
+### Interactive Login/Join Page
+
+로그인/회원가입 페이지를 React로 만들어, Data 연동까지 하는 것이 목표
+
+#### Page List.
+
+**기존 페이지**  
+https://codepen.io/webiscuit/pen/XweygL
+
+#### Process.
+
+**10.05**
+
+- React 프로젝트 생성
+- 프로젝트 기본 폴더 구조 추가
+- welcome 페이지 구조 추가
+
 ## Tech Stack.
 
-HTML, ES6, CSS
+React, ES6, SCSS
