@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import "./common.scss";
 
 class App extends Component {
@@ -12,23 +12,21 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="container">
-				<div className="card-bx">
-					<section className="card-item card-intro">
-						<div className="card-inner">
-							<h2 className="card-title">WELCOME</h2>
-							<p className="card-desc">Welcome to the login page</p>
-							<div className="btn-bx">
-								<Link to="./components/join" className="btn btn-register">
-									REGISTER
-								</Link>
-								<Link to="./components/login" className="btn btn-login">
-									LOGIN
-								</Link>
-							</div>
+			<div className="card-bx">
+				<section className="card-item card-intro">
+					<div className="card-inner">
+						<h2 className="card-title">WELCOME</h2>
+						<p className="card-desc">Welcome to the login page</p>
+						<div className="btn-bx">
+							<Link to="/components/join" className="btn btn-register">
+								REGISTER
+							</Link>
+							<Link to="/components/login" className="btn btn-login">
+								LOGIN
+							</Link>
 						</div>
-					</section>
-				</div>
+					</div>
+				</section>
 			</div>
 		);
 	}
