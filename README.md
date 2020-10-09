@@ -201,6 +201,11 @@ https://codepen.io/webiscuit/pen/XweygL
 - welcome 페이지 구조 변경 → 불필요한 wrapper삭제
 - welcome 페이지 스타일 추가
 
+**10.10**
+
+- App.js 진입 시 노출될 intro.js 추가 (default page)
+- login 페이지 구조 추가 및 스타일 추가
+
 ## Tech Stack.
 
 React, ES6, SCSS

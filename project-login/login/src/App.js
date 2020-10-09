@@ -1,33 +1,40 @@
-import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import React, { Component, Fragment } from "react";
+import { Route, Switch } from "react-router-dom";
+import Intro from "./components/intro";
+import Login from "./components/login";
+import Join from "./components/join";
 import "./common.scss";
 
 class App extends Component {
 	state = {
 		aUserInfo: [],
+		userName: "",
+		userId: "",
+		userPw: "",
 		bIsLogin: false,
+	};
+
+	handleChange = (e) => {
+		const { value, name } = e.target;
+		this.setState({
+			[name]: value,
+		});
 	};
 
 	componentDidMount() {}
 
 	render() {
+		const { aUserInfo, userName, userId, userPw, bIsLogin } = this.state;
+
 		return (
-			<div className="card-bx">
-				<section className="card-item card-intro">
-					<div className="card-inner">
-						<h2 className="card-title">WELCOME</h2>
-						<p className="card-desc">Welcome to the login page</p>
-						<div className="btn-bx">
-							<Link to="/components/join" className="btn btn-register">
-								REGISTER
-							</Link>
-							<Link to="/components/login" className="btn btn-login">
-								LOGIN
-							</Link>
-						</div>
-					</div>
-				</section>
-			</div>
+			<Fragment>
+				<Switch>
+					<Route exact path="/" render={() => <Intro />} />
+					<Route exact path="/login" render={() => <Login data={aUserInfo} userId={userId} userPw={userPw} onChange={this.handleChange} />} />
+					<Route exact path="/join" render={() => <Join data={aUserInfo} userName={userName} userId={userId} userPw={userPw} onChange={this.handleChange} />} />
+					<Route render={() => <div className="projectError">404 NOT FOUND :(</div>} />
+				</Switch>
+			</Fragment>
 		);
 	}
 }
