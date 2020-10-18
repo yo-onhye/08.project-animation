@@ -19,7 +19,7 @@ class Intro extends Component {
 						<h2 className="card-title">WELCOME</h2>
 						<p className="card-desc">Welcome to the login page</p>
 						<div className="btn-bx">
-							<Link to="/join" className="btn btn-register">
+							<Link to="/join" className="btn btn-join">
 								REGISTER
 							</Link>
 							<Link to="/login" className="btn btn-login">

@@ -206,6 +206,15 @@ https://codepen.io/webiscuit/pen/XweygL
 - App.js 진입 시 노출될 intro.js 추가 (default page)
 - login 페이지 구조 추가 및 스타일 추가
 
+**10.17**
+
+- join 페이지 구조 추가
+
+**10.18**
+
+- join 페이지 스타일 추가
+- css 정리
+
 ## Tech Stack.
 
 React, ES6, SCSS
