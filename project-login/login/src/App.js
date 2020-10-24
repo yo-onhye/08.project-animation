@@ -7,7 +7,14 @@ import "./common.scss";
 
 class App extends Component {
 	state = {
-		aUserInfo: [],
+		aUserInfo: [
+			{
+				dataId: 0,
+				useInforName: "홍길동",
+				useInforId: "user111",
+				useInforPw: "user111!",
+			},
+		],
 		userName: "",
 		userId: "",
 		userPw: "",
@@ -19,6 +26,32 @@ class App extends Component {
 		this.setState({
 			[name]: value,
 		});
+	};
+
+	checkUserAccount = (e) => {
+		e.preventDefault();
+
+		const { aUserInfo, userId, userPw } = this.state;
+		if (userId !== "" && userPw !== "") {
+			const userData = aUserInfo.find((userData) => userData.userDataId === userId && userData.userDataPw === userPw);
+
+			if (userData === undefined) {
+				this.setState({
+					vaildAccount: false,
+				});
+			} else {
+				this.setState({
+					loginId: userId,
+					userDatas: aUserInfo.filter((userData) => userData.userDataId === userId),
+					vaildAccount: true,
+				});
+			}
+			return userData;
+		} else {
+			this.setState({
+				vaildAccount: false,
+			});
+		}
 	};
 
 	componentDidMount() {}

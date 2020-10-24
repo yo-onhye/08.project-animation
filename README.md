@@ -215,6 +215,11 @@ https://codepen.io/webiscuit/pen/XweygL
 - join 페이지 스타일 추가
 - css 정리
 
+**10.22**
+
+- 입력 받은 데이터 비교 함수 추가
+- 내일 중 유효성 검사 함수 추가 예정
+
 ## Tech Stack.
 
 React, ES6, SCSS
