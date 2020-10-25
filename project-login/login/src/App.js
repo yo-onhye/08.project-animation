@@ -54,6 +54,50 @@ class App extends Component {
 		}
 	};
 
+	handleUserInsert = (e) => {
+		e.preventDefault();
+
+		const { aUserInfo, signupId, signupPw, signupRepw, signupName } = this.state;
+
+		if (signupId === "" || signupPw === "" || signupRepw === "" || signupName === "") {
+			this.setState({
+				vaildInfo: false,
+				validText: '입력되지 않은 값이 있습니다. 확인해주세요.'
+			});
+		} else if (signupId.length < 5) {
+			this.setState({
+				vaildInfo: false,
+				validText: '아이디는 6자 이상이어야 합니다.'
+			});
+		} else if (signupPw.length < 7) {
+			this.setState({
+				vaildInfo: false,
+				validText: '비밀번호는 8자 이상이어야 합니다.'
+			});
+		} else if (signupPw !== signupRepw) {
+			this.setState({
+				vaildInfo: false,
+				validText: '비밀번호가 일치하지 않습니다.'
+			});
+		} else {
+			this.setState({
+				aUserInfo: aUserInfo.concat({
+					dataId: this.dataId,
+					userDataId: signupId,
+					userDataPw: signupPw,
+					userDataName: signupName,
+					channelDatas: "",
+				}),
+				vaildInfo: true,
+				signupId: "",
+				signupPw: "",
+				signupRepw: "",
+				signupName: "",
+			});
+			this.dataId++;
+		}
+	};
+
 	componentDidMount() {}
 
 	render() {
