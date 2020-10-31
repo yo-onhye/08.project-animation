@@ -19,6 +19,9 @@ class App extends Component {
 		userId: "",
 		userPw: "",
 		bIsLogin: false,
+		vaildAccount: true,
+		vaildInfo: false,
+		validText: '',
 	};
 
 	handleChange = (e) => {
@@ -33,7 +36,7 @@ class App extends Component {
 
 		const { aUserInfo, userId, userPw } = this.state;
 		if (userId !== "" && userPw !== "") {
-			const userData = aUserInfo.find((userData) => userData.userDataId === userId && userData.userDataPw === userPw);
+			const userData = aUserInfo.find((userData) => userData.useInforId === userId && userData.useInforPw === userPw);
 
 			if (userData === undefined) {
 				this.setState({
@@ -101,13 +104,13 @@ class App extends Component {
 	componentDidMount() {}
 
 	render() {
-		const { aUserInfo, userName, userId, userPw, bIsLogin } = this.state;
+		const { aUserInfo, userName, userId, userPw, vaildAccount, validText, bIsLogin } = this.state;
 
 		return (
 			<Fragment>
 				<Switch>
 					<Route exact path="/" render={() => <Intro />} />
-					<Route exact path="/login" render={() => <Login data={aUserInfo} userId={userId} userPw={userPw} onChange={this.handleChange} />} />
+					<Route exact path="/login" render={() => <Login data={aUserInfo} userId={userId} userPw={userPw} vaildAccount={vaildAccount} validText={validText} onChange={this.handleChange} onCheckVaild={this.checkUserAccount} />} />
 					<Route exact path="/join" render={() => <Join data={aUserInfo} userName={userName} userId={userId} userPw={userPw} onChange={this.handleChange} />} />
 					<Route render={() => <div className="projectError">404 NOT FOUND :(</div>} />
 				</Switch>

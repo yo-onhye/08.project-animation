@@ -15,7 +15,7 @@ class Login extends Component {
 	}
 
 	render() {
-		const { userId, userPw, onChange } = this.props;
+		const { vaildAccount, validText, userId, userPw, onChange, onCheckVaild } = this.props;
 		return (
 			<div className="card-bx">
 				<section className="card-item card-login">
@@ -27,14 +27,15 @@ class Login extends Component {
 							please login with your account
 						</p>
 						<div className="inp-bx">
-							<form>
+							<form onSubmit={onCheckVaild}>
 								<div className="inp-item">
-									<input type="text" value={userId} name="userId" onChange={onChange} ref={this.userIdInput} placeholder="Email" required="required" />
+									<input type="text" id="userId" value={userId} name="userId" onChange={onChange} ref={this.userIdInput} placeholder="Email" required="required" />
 								</div>
 								<div className="inp-item">
-									<input type="password" value={userPw} name="userPw" onChange={onChange} ref={this.userPwInput} placeholder="Password" required="required" />
+									<input type="password" id="userPw" value={userPw} name="userPw" onChange={onChange} ref={this.userPwInput} placeholder="Password" required="required" />
 								</div>
-								<button type="button" className="btn btn-login">
+								{!vaildAccount && <span className="projectInvaildText">validText</span>}
+								<button type="submit" className="btn btn-login">
 									LOGIN
 								</button>
 							</form>
