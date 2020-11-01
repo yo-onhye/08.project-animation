@@ -25,6 +25,9 @@ class Intro extends Component {
 							<Link to="/login" className="btn btn-login">
 								LOGIN
 							</Link>
+							<Link to="/find" className="btn btn-find-tx">
+								FInd your password
+							</Link>
 						</div>
 					</div>
 				</section>

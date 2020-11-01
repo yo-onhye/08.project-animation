@@ -159,8 +159,21 @@ body {
     &.btn-join {
       background-color: #ee9ca7;
     }
-    &.btn-login {
+    &.btn-login,
+    &.btn-find {
       background-color: #a7bfe8;
+    }
+    &.btn-find-tx {
+      border: none;
+      border-radius: 0;
+      color: #a7bfe8;
+      font-size: 1rem;
+      text-decoration: underline;
+      &:focus,
+      &:hover {
+        box-shadow: none;
+        background-color: transparent;
+      }
     }
     &:focus,
     &:hover {
@@ -196,7 +209,8 @@ body {
       color: #ee9ca7;
     }
   }
-  &.card-login {
+  &.card-login,
+  &.card-find {
     .card-title {
       color: #a7bfe8;
     }

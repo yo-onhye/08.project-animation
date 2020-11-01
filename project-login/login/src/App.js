@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Intro from "./components/intro";
 import Login from "./components/login";
 import Join from "./components/join";
+import Find from "./components/find";
 import "./common.scss";
 
 class App extends Component {
@@ -112,6 +113,7 @@ class App extends Component {
 					<Route exact path="/" render={() => <Intro />} />
 					<Route exact path="/login" render={() => <Login data={aUserInfo} userId={userId} userPw={userPw} vaildAccount={vaildAccount} validText={validText} onChange={this.handleChange} onCheckVaild={this.checkUserAccount} />} />
 					<Route exact path="/join" render={() => <Join data={aUserInfo} userName={userName} userId={userId} userPw={userPw} onChange={this.handleChange} />} />
+					<Route exact path="/find" render={() => <Find data={aUserInfo} userName={userName} userId={userId} onChange={this.handleChange} />} />
 					<Route render={() => <div className="projectError">404 NOT FOUND :(</div>} />
 				</Switch>
 			</Fragment>
