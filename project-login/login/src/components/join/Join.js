@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import "../../common.scss";
 
 class Join extends Component {
-	userNameInput = createRef();
-	userIdInput = createRef();
-	userPwInput = createRef();
+	signupNameInput = createRef();
+	signupIdInput = createRef();
+	signupPwInput = createRef();
+	signupRepwInput = createRef();
 
 	showCard = () => {
 		document.body.style.backgroundPosition = "0 0";
@@ -16,7 +17,7 @@ class Join extends Component {
 	}
 
 	render() {
-		const { userName, userId, userPw, aUserInfo, onChange } = this.props;
+		const { signupName, signupId, signupPw, signupRepw, onChange, onInsertInfo, vaildAccount, validText } = this.props;
 		return (
 			<div className="card-bx">
 				<section className="card-item card-join">
@@ -28,17 +29,21 @@ class Join extends Component {
 							please login with your email
 						</p>
 						<div className="inp-bx">
-							<form>
+							<form onSubmit={onInsertInfo}>
 								<div className="inp-item">
-									<input type="text" value={userName} name="userName" onChange={onChange} ref={this.userNameInput} placeholder="Name" required="required" />
+									<input type="text" value={signupName} name="signupName" onChange={onChange} ref={this.signupNameInput} placeholder="Name" required="required" />
 								</div>
 								<div className="inp-item">
-									<input type="text" value={userId} name="userId" onChange={onChange} ref={this.userIdInput} placeholder="Email" required="required" />
+									<input type="text" value={signupId} name="signupId" onChange={onChange} ref={this.signupIdInput} placeholder="Email" required="required" />
 								</div>
 								<div className="inp-item">
-									<input type="password" value={userPw} name="userPw" onChange={onChange} ref={this.userPwInput} placeholder="Password" required="required" />
+									<input type="password" value={signupPw} name="signupPw" onChange={onChange} ref={this.signupPwInput} placeholder="Password" required="required" />
 								</div>
-								<button type="button" className="btn btn-join">
+								<div className="inp-item">
+									<input type="password" value={signupRepw} name="signupRepw" onChange={onChange} ref={this.signupRepwInput} placeholder="Password" required="required" />
+								</div>
+								<span className="projectInvaildText">{validText}</span>
+								<button type="submit" className="btn btn-join">
 									REGISTER
 								</button>
 							</form>
