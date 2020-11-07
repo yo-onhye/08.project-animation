@@ -29,7 +29,7 @@ class Join extends Component {
 							please login with your email
 						</p>
 						<div className="inp-bx">
-							<form onSubmit={onInsertInfo}>
+							<form onSubmit={onInsertInfo} noValidate>
 								<div className="inp-item">
 									<input type="text" value={signupName} name="signupName" onChange={onChange} ref={this.signupNameInput} placeholder="Name" required="required" />
 								</div>

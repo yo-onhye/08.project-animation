@@ -86,11 +86,12 @@ class App extends Component {
 					useInfoId: signupId,
 					useInfoPw: signupPw,
 				}),
-				vaildInfo: true,
 				signupName: "",
 				signupId: "",
 				signupPw: "",
 				signupRepw: "",
+				vaildInfo: true,
+				validText: "",
 			});
 			this.dataId++;
 		}
