@@ -234,6 +234,7 @@ https://codepen.io/webiscuit/pen/XweygL
 
 - 유효성 텍스트 수정
 - Join Page 데이터 입력 성공 시 메인으로 이동 추가
+- Login Page 유효성 텍스트 노출 수정
 
 ## Tech Stack.
 
