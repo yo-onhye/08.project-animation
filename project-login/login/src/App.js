@@ -42,23 +42,24 @@ class App extends Component {
 
 		const { aUserInfo, userId, userPw } = this.state;
 		if (userId !== "" && userPw !== "") {
-			const userData = aUserInfo.find((userData) => userData.useInforId === userId && userData.useInforPw === userPw);
+			const userData = aUserInfo.find((userData) => userData.userId === userId && userData.userPw === userPw);
 
 			if (userData === undefined) {
 				this.setState({
-					vaildAccount: false,
+					validText: "로그인 정보가 올바르지 않습니다.",
 				});
 			} else {
 				this.setState({
 					loginId: userId,
 					userDatas: aUserInfo.filter((userData) => userData.userDataId === userId),
-					vaildAccount: true,
+					validText: "로그인 완료!",
+					bIsLogin: true,
 				});
 			}
 			return userData;
 		} else {
 			this.setState({
-				vaildAccount: false,
+				validText: "입력 란을 확인해주세요.",
 			});
 		}
 	};
@@ -94,8 +95,13 @@ class App extends Component {
 				validText: "",
 			});
 			this.dataId++;
+			this.goToMain();
 		}
 	};
+
+	goToMain = () => {
+		window.history.back();
+	}
 
 	componentDidMount() {}
 
@@ -106,8 +112,8 @@ class App extends Component {
 			<Fragment>
 				<Switch>
 					<Route exact path="/" render={() => <Intro />} />
-					<Route exact path="/login" render={() => <Login data={aUserInfo} userId={userId} userPw={userPw} vaildAccount={vaildAccount} validText={validText} onChange={this.handleChange} onCheckVaild={this.checkUserAccount} />} />
-					<Route exact path="/join" render={() => <Join signupName={signupName} signupId={signupId} signupPw={signupPw} signupRepw={signupRepw} validText={validText} vaildAccount={vaildAccount} onChange={this.handleChange} onInsertInfo={this.handleUserInsert} />} />
+					<Route exact path="/login" render={() => <Login userId={userId} userPw={userPw} validText={validText} onChange={this.handleChange} onCheckVaild={this.checkUserAccount} />} />
+					<Route exact path="/join" render={() => <Join signupName={signupName} signupId={signupId} signupPw={signupPw} signupRepw={signupRepw} validText={validText} onChange={this.handleChange} onInsertInfo={this.handleUserInsert} />} />
 					<Route exact path="/find" render={() => <Find data={aUserInfo} userName={userName} userId={userId} onChange={this.handleChange} />} />
 					<Route render={() => <div className="projectError">404 NOT FOUND :(</div>} />
 				</Switch>

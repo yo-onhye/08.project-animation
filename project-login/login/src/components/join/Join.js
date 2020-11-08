@@ -17,7 +17,7 @@ class Join extends Component {
 	}
 
 	render() {
-		const { signupName, signupId, signupPw, signupRepw, onChange, onInsertInfo, vaildAccount, validText } = this.props;
+		const { signupName, signupId, signupPw, signupRepw, onChange, onInsertInfo,  validText } = this.props;
 		return (
 			<div className="card-bx">
 				<section className="card-item card-join">

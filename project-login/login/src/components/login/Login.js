@@ -27,14 +27,14 @@ class Login extends Component {
 							please login with your account
 						</p>
 						<div className="inp-bx">
-							<form onSubmit={onCheckVaild}>
+							<form onSubmit={onCheckVaild} noValidate>
 								<div className="inp-item">
 									<input type="text" id="userId" value={userId} name="userId" onChange={onChange} ref={this.userIdInput} placeholder="Email" required="required" />
 								</div>
 								<div className="inp-item">
 									<input type="password" id="userPw" value={userPw} name="userPw" onChange={onChange} ref={this.userPwInput} placeholder="Password" required="required" />
 								</div>
-								{!vaildAccount && <span className="projectInvaildText">validText</span>}
+								<span className="projectInvaildText">{validText}</span>
 								<button type="submit" className="btn btn-login">
 									LOGIN
 								</button>

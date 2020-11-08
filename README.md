@@ -230,6 +230,11 @@ https://codepen.io/webiscuit/pen/XweygL
 - Join Page 데이터 입력 수정
 - validate text노출 시 **noValidate**가 없을 경우 값이 없을 떄 크롬 기본 유효성 오류 UI가 나와 해당 속성 추가
 
+**11.08**
+
+- 유효성 텍스트 수정
+- Join Page 데이터 입력 성공 시 메인으로 이동 추가
+
 ## Tech Stack.
 
 React, ES6, SCSS
