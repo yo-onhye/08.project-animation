@@ -4,6 +4,7 @@ import Intro from "./components/intro";
 import Login from "./components/login";
 import Join from "./components/join";
 import Find from "./components/find";
+import Modify from "./components/modify";
 import "./common.scss";
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
 		userName: "",
 		userId: "",
 		userPw: "",
+		userRepw: "",
 		signupName: "",
 		signupId: "",
 		signupPw: "",
@@ -99,6 +101,17 @@ class App extends Component {
 		}
 	};
 
+	handleUserUpdate = (id, data) => {
+    const { aUserInfo } = this.state;
+    this.setState({
+      aUserInfo: aUserInfo.map(
+        info => id === info.id
+          ? { ...info, ...data }
+          : info
+      )
+    })
+  }
+
 	goToMain = () => {
 		window.history.back();
 	}
@@ -106,7 +119,7 @@ class App extends Component {
 	componentDidMount() {}
 
 	render() {
-		const { aUserInfo, userName, userId, userPw, signupName, signupId, signupPw, signupRepw, vaildAccount, validText } = this.state;
+		const { aUserInfo, userName, userId, userPw, userRepw, signupName, signupId, signupPw, signupRepw, vaildAccount, validText } = this.state;
 
 		return (
 			<Fragment>
@@ -115,6 +128,7 @@ class App extends Component {
 					<Route exact path="/login" render={() => <Login userId={userId} userPw={userPw} validText={validText} onChange={this.handleChange} onCheckVaild={this.checkUserAccount} />} />
 					<Route exact path="/join" render={() => <Join signupName={signupName} signupId={signupId} signupPw={signupPw} signupRepw={signupRepw} validText={validText} onChange={this.handleChange} onInsertInfo={this.handleUserInsert} />} />
 					<Route exact path="/find" render={() => <Find data={aUserInfo} userName={userName} userId={userId} onChange={this.handleChange} />} />
+					<Route exact path="/modify" render={() => <Modify userName={userName} userId={userId} userPw={userPw} userRepw={userRepw} onChange={this.handleChange} />} />
 					<Route render={() => <div className="projectError">404 NOT FOUND :(</div>} />
 				</Switch>
 			</Fragment>

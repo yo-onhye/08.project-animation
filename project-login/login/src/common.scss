@@ -156,7 +156,8 @@ body {
     & + .btn {
       margin-top: 0.8em;
     }
-    &.btn-join {
+    &.btn-join,
+    &.btn-modify {
       background-color: #ee9ca7;
     }
     &.btn-login,
